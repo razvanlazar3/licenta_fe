@@ -1,0 +1,32 @@
+<div class="pagination mt-3 row justify-content-center">
+  <div *ngIf="currentPage !== 1"
+       class="d-flex justify-content-center align-items-center arrow me-1 clickable"
+       (click)="previousPage()"
+  >
+    <img src="../../../../../assets/left-arrow.png">
+  </div>
+  <div *ngFor="let page of visiblePages"
+       class="d-flex justify-content-center align-items-center clickable page-number m-1 page"
+       [ngClass]="{'currentPage': page === currentPage}"
+       (click)="redirectToPage(page)"
+  >
+    {{page}}
+  </div>
+  <div *ngIf="currentPage < lastPage-2"
+       class="d-flex justify-content-center align-items-center more-pages">
+    <img src="../../../../../assets/more.png">
+  </div>
+  <div *ngIf="currentPage < lastPage-1 && (currentPage + 2 !== lastPage)"
+       class="d-flex justify-content-center align-items-center clickable page-number m-1 page"
+       (click)="redirectToLastPage()"
+  >
+    {{lastPage}}
+  </div>
+  <div *ngIf="currentPage !== lastPage"
+       class="d-flex justify-content-center align-items-center arrow ms-1 clickable"
+       (click)="nextPage()"
+  >
+    <img src="../../../../../assets/right-arrow.png">
+  </div>
+</div>
+

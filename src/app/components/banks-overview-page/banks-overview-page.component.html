@@ -1,0 +1,44 @@
+<app-sticky-header></app-sticky-header>
+<div class="d-flex flex-column second-background">
+  <app-general-intro [selectedOption]="generalPageOptionEnum.OVERVIEW"></app-general-intro>
+  <div class="d-flex flex-column align-items-center justify-content-center p-3">
+    <div class="d-flex flex-row charts-section">
+    <div class="chart p-3">
+      <div class="d-flex align-items-center chart-title mt-1 mb-2 justify-content-lg-start">
+        {{BANKS_PIE_CHART_TITLE}}
+      </div>
+      <apx-chart
+        [series]="donutChartOptions?.series!"
+        [chart]="donutChartOptions?.chart!"
+        [labels]="donutChartOptions?.labels!"
+        [responsive]="donutChartOptions?.responsive!"
+      ></apx-chart>
+    </div>
+      <div class="chart p-3">
+        <div class="d-flex align-items-center chart-title mt-1 mb-2 justify-content-lg-start">
+          {{BANKS_BAR_CHART_TITLE}}
+        </div>
+        <form [formGroup]="periodForm">
+        <app-dropdown
+          class="d-flex mb-1"
+          [options]="dropdownOptions"
+          [icon]="PERIOD_ICON"
+          formControlName="{{PERIOD}}"
+        ></app-dropdown>
+        </form>
+        <apx-chart
+          [series]="barChartOptions?.series!"
+          [chart]="barChartOptions?.chart!"
+          [xaxis]="barChartOptions?.xaxis!"
+          [yaxis]="barChartOptions?.yaxis!"
+          [colors]="barChartOptions?.colors!"
+          [tooltip]="barChartOptions?.tooltip!"
+          [dataLabels]="barChartOptions?.dataLabels!">
+        </apx-chart>
+      </div>
+  </div>
+    <app-table [elements]="bankDeposits" (depositRemovedEvent)="updateDeposits($event)"></app-table>
+    <app-button [text]="DOWNLOAD_REPORT" (click)="downloadReport()"></app-button>
+</div>
+</div>
+

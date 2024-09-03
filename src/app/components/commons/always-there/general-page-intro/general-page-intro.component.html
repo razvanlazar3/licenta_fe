@@ -1,0 +1,10 @@
+<div class="d-flex flex-row justify-content-center pt-5">
+  <div *ngFor="let option of generalPageOptions; index as idx"
+       class="general-option m-3 p-3 clickable"
+       [ngClass]="{'selected': selectedOption.valueOf() === option}"
+       (click)="selectOption(option)"
+  >
+    <img src='{{generalOptionsIcons[idx]}}' class="general-option-image">
+    {{option}}
+  </div>
+</div>

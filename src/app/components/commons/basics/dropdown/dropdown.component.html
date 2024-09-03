@@ -1,0 +1,22 @@
+<div class="d-flex flex-column">
+  <div class="d-flex align-items-center m-1 input-container">
+    <img *ngIf="icon !==''" src="{{ icon }}" alt="missing-icon">
+    <div class="custom-dropdown">
+      <div class=" d-flex justify-content-between align-items-center clickable dropdown-btn"
+           (click)="toggleDropdown()">
+        <span [ngClass]="{'placeholder': !selectedOption}"
+              [innerHTML]="selectedOption || 'Choose'"
+        ></span>
+        <i></i>
+      </div>
+      <div class="dropdown-content" *ngIf="showDropdown">
+        <div class="clickable" *ngFor="let option of options" (click)="selectOption(option)">
+          {{ option.label }}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="errors">
+    <h6 class="d-flex justify-content-center m-2 error" *ngFor="let error of errors">{{ error }}</h6>
+  </div>
+</div>

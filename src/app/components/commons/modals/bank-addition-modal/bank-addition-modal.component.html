@@ -1,0 +1,36 @@
+<div class="card d-flex align-items-center">
+  <div class="card-body m-2">
+    <div class="d-flex justify-content-center mb-1">
+      <img src="../../../../../assets/general/always-there-icons/finance_icon.png" class="card-image">
+    </div>
+    <h4 class="d-flex m-3 justify-content-center card-title">{{BANK_ADDITION_TITLE}}</h4>
+    <div class="d-flex align-items-center justify-content-center">
+      <form [formGroup]="bankForm">
+        <app-input
+          class="d-flex mb-1"
+          [label]="SUM_LABEL"
+          [icon]="SUM_ICON"
+          [errors]="getErrors(SUM)"
+          formControlName="{{SUM}}">
+        </app-input>
+        <app-dropdown
+          class="d-flex mb-1"
+          [options]="data.offers"
+          [icon]="OFFER_ICON"
+          [errors]="getErrors(OFFER)"
+          formControlName="{{OFFER}}"
+        ></app-dropdown>
+        <app-input
+          class="d-flex mb-1"
+          [readonly]="true"
+          [label]="totalFund"
+          [icon]="TOTAL_FUND_ICON"
+          >
+        </app-input>
+      </form>
+    </div>
+    <div class="d-flex justify-content-center m-2">
+      <app-button [text]="operation" (click)="addBankDeposit()"></app-button>
+    </div>
+  </div>
+</div>

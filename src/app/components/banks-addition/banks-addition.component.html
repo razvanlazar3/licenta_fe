@@ -1,0 +1,12 @@
+<app-sticky-header></app-sticky-header>
+<div class="d-flex flex-column second-background">
+  <app-general-intro [selectedOption]="generalPageOptionEnum.ADDITION"></app-general-intro>
+  <div class="d-flex flex-column align-items-center justify-content-center">
+    <div *ngFor="let bank of banks">
+      <app-bank-card
+        [bank]="bank"
+        class="d-flex mb-4">
+      </app-bank-card>
+    </div>
+  </div>
+</div>

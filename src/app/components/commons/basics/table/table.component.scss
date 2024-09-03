@@ -1,0 +1,82 @@
+@import 'src/styles';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+.header {
+  background-color: transparent !important;
+}
+
+td img {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+
+table, th, td {
+  padding: 0.2rem 0.7rem;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 16px;
+}
+
+table, td {
+  padding: 0.3rem 1.5rem;
+}
+
+main.table {
+  background-color: #fff5;
+  backdrop-filter: blur(7px);
+  box-shadow: 0 0.4rem .8rem #0005;
+  border-radius: .8rem;
+  overflow: hidden;
+  min-width: 55vw;
+}
+
+table {
+  width: 90%;
+  margin: 5%;
+}
+
+thead th {
+  position: sticky;
+  top: 0;
+  left: 0;
+}
+
+tbody tr:nth-child(even) {
+  background-color: rgba(118, 185, 200, 0.2) !important;;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: rgba(175, 122, 44, 0.2) !important;;
+}
+
+tbody tr.profit:hover, tbody tr.loss:hover, tbody tr:hover {
+  background-color: $ternary-color !important;
+}
+
+tbody tr.profit:not(hover){
+  background-color: rgb(0, 227, 150) !important;;
+}
+
+tbody tr.loss:not(hover){
+  background-color: $error-color !important;;
+}
+
+tbody tr {
+  border-radius: 16px;
+}
+
+.remove-icon {
+  padding: 0.2rem 1.3rem !important;
+}
+
+.longer-fields {
+  width: 4rem;
+}

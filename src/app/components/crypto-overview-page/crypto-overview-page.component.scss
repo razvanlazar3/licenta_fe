@@ -1,0 +1,17 @@
+@import 'src/styles';
+
+.overview-title {
+  font-size: 16pt;
+  font-weight: 1000;
+  font-family: Helvetica, Arial, sans-serif;
+  color: $primary-color;
+  gap: 3rem;
+}
+
+.loss {
+  color: $error-color;
+}
+
+.profit {
+  color: rgb(0, 227, 150);
+}

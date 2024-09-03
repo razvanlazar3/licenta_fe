@@ -1,0 +1,24 @@
+.btn {
+  width: 10rem;
+  min-width: fit-content;
+  height: 3rem;
+  border-radius: 3rem;
+  background-color: #1B4656;
+  color: white;
+  text-transform: uppercase;
+  font-weight: 600;
+  transition: all 0.5s;
+}
+
+.btn:hover {
+  background-color: #76B9C8;
+  color: white;
+}
+
+.red {
+  background-color: #E24549;
+}
+
+.red:hover {
+  background-color: red;
+}

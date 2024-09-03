@@ -1,0 +1,31 @@
+.container {
+  background-color: rgba(118, 185, 200, 0.3);
+  height: fit-content;
+  border-radius: 1rem;
+  border-color: #026163;
+  border-width: thick;
+}
+
+.container .dropdown-option:not(:first-child) {
+  border-top: #026163;
+  border-top-style: solid;
+}
+
+.dropdown-option {
+  background-color: rgba(206, 193, 175, 0);
+  font-size: 1.25rem;
+}
+
+.top-border {
+  border-top-color: #026163;
+  border-top-style: solid;
+}
+
+.visible {
+  display: flex;
+  flex-direction: column;
+}
+
+.invisible {
+  display: none;
+}

@@ -1,0 +1,48 @@
+<div class="card">
+  <div class="card-body m-4">
+    <div class="d-flex justify-content-center mb-1 mt-4">
+      <img src='{{FINANCE_ICON}}' class="register-card-logo">
+    </div>
+    <h4 class="d-flex mx-1 mt-3 justify-content-center card-title">{{welcomeText}}</h4>
+    <div class="d-flex align-items-center justify-content-center">
+      <form [formGroup]="form">
+        <div *ngIf="isSignUp">
+          <app-input
+            class="d-flex mb-3"
+            [label]="USERNAME_TEXT"
+            [icon]="USERNAME_ICON"
+            [errors]="getErrors(NAME)"
+            formControlName="name">
+          </app-input>
+        </div>
+        <app-input
+          class="d-flex mb-3"
+          [label]="EMAIL_TEXT"
+          [icon]="EMAIL_ICON"
+          [errors]="getErrors(EMAIL)"
+          formControlName="email">
+        </app-input>
+        <app-input
+          class="d-flex mb-3"
+          [label]="PASSWORD_TEXT"
+          [icon]="PASSWORD_ICON"
+          [hide]="true"
+          [errors]="getErrors(PASSWORD)"
+          formControlName="password">
+        </app-input>
+      </form>
+    </div>
+    <div *ngIf="!isSignUp" class="d-flex justify-content-center m-2">
+      <h6 class="d-flex align-items-center">{{NO_ACCOUNT}}</h6>
+      <div class="d-flex ms-2">
+        <h6 class="d-flex align-items-center clickable" (click)="redirectToSignUp()">{{LOGIN}}</h6>
+        <div class="ms-2 mb-3">
+          <img class="register-image-icon" src='{{REGISTER_ICON}}'>
+        </div>
+      </div>
+    </div>
+    <div class="d-flex justify-content-center">
+      <app-button [text]="login_or_signup" (click)="registerOrLogin()"></app-button>
+    </div>
+  </div>
+</div>

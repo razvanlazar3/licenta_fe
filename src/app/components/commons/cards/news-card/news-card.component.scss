@@ -1,0 +1,44 @@
+@import 'src/styles';
+
+.news-card {
+  background: $card-background;
+  border-color: $primary-color;
+  overflow: hidden;
+}
+
+.news-pic {
+  width: 100%;
+  height: auto;
+  max-height: 200px;
+  border-radius: 5rem;
+  object-fit: cover;
+}
+
+.news-title {
+  font-weight: 900;
+  font-size: 22pt;
+}
+
+.news-summary {
+  font-style: oblique;
+  color: $primary-color;
+  margin-top: 1rem;
+}
+
+.card-body {
+  padding: 1rem;
+}
+
+.row {
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .news-card {
+    flex-direction: column;
+  }
+
+  .news-pic {
+    max-height: 150px;
+  }
+}

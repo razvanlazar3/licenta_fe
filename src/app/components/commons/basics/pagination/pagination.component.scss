@@ -1,0 +1,31 @@
+.page-number {
+  background-color: #76B9C8;
+  border-radius: 16px;
+  width: 30px;
+  height: 30px;
+  color:white;
+}
+
+.currentPage {
+  background-color: #F7E599;
+}
+
+.more-pages {
+  width: 50px;
+  height: 30px;
+}
+
+.arrow {
+  width: 18px;
+  height: 18px;
+  margin-top: 0.6rem;
+
+  img {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+.page:hover {
+  background-color: #1B4656;
+}

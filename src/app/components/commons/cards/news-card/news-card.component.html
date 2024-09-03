@@ -1,0 +1,14 @@
+<div class="d-flex align-items-center card news-card">
+  <div class="row g-0">
+    <div class="col-md-5">
+      <img [src]="imageUrl" class="news-pic" alt="News Image">
+    </div>
+    <div class="col-md-7 d-flex flex-column">
+      <div class="d-flex flex-column justify-content-between card-body">
+        <h5 class="news-title">{{ title }}</h5>
+        <p class="news-summary">{{ summary }}</p>
+        <app-button [text]="buttonText" (click)="openExternalNewsPage()"></app-button>
+      </div>
+    </div>
+  </div>
+</div>

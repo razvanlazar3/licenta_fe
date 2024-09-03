@@ -1,0 +1,26 @@
+<app-sticky-header></app-sticky-header>
+<div class="d-flex flex-column second-background">
+  <app-general-intro [selectedOption]="generalPageOptionEnum.ADDITION"></app-general-intro>
+  <div class="d-flex flex-column align-items-center justify-content-center">
+    <div id="chart">
+      <apx-chart
+        [series]="chartOptions.series!"
+        [chart]="chartOptions.chart!"
+        [xaxis]="chartOptions.xaxis!"
+        [plotOptions]="chartOptions.plotOptions!"
+        [dataLabels]="chartOptions.dataLabels!"
+        [title]="chartOptions.title!"
+      ></apx-chart>
+    </div>
+    <form [formGroup]="searchForm">
+      <app-input
+        class="d-flex mb-1 mt-2"
+        [label]="SEARCH_LABEL"
+        [icon]="SEARCH_ICON"
+        formControlName="{{SEARCH}}">
+      </app-input>
+    </form>
+    <app-table [elements]="filteredCrypto" [icon]="ADD_ICON"></app-table>
+    <app-pagination [lastPage]="lastPage" (redirectToPageEvent)="showCertainPage($event)"></app-pagination>
+  </div>
+</div>

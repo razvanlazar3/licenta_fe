@@ -1,0 +1,51 @@
+.sticky-header {
+  background-color: rgba(118, 185, 200, 0.3);
+  height: 12vh;
+  color: #1B4656;
+  width: 100vw;
+  z-index: 1000;
+}
+
+.menu-item {
+  color: #1B4656;
+  font-size: 20pt;
+  font-weight: 500;
+}
+
+.menu-icon {
+  width: 2.5rem;
+  height: auto;
+}
+
+.logo {
+  height: 5rem;
+  width: auto;
+}
+
+.user-icon-dropdown {
+  margin-top: -2rem;
+  margin-left: 2.5rem;
+  padding-right: 3rem;
+  position: absolute;
+  width: 100%;
+  z-index: 1000;
+}
+
+$responsive-text-start-width: 1291px;
+$responsive-text-start-margin: 35rem;
+$step: 65px;
+$rem-decrement-per-step: 4rem;
+
+.responsive-text {
+  margin-right: $responsive-text-start-margin
+}
+
+@for $i from 1 through 8 {
+  $new-width: $responsive-text-start-width - $step * $i;
+  $new-margin: $responsive-text-start-margin - $rem-decrement-per-step * $i;
+  @media (max-width: #{$new-width}) {
+    .responsive-text {
+      margin-right: $new-margin;
+    }
+  }
+}

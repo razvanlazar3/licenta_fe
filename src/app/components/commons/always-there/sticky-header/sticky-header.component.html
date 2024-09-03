@@ -1,0 +1,20 @@
+<div class="sticky-header d-flex align-items-center justify-content-between">
+  <div class="d-flex align-items-center ms-4">
+    <img src='{{LOGO_ICON}}' alt="Logo" class="logo">
+    <h2 class="responsive-text">{{APP_TITLE}}</h2>
+  </div>
+  <div class="menu d-flex align-items-center">
+    <div *ngFor="let option of headerOptions"
+         class="menu-item  clickable m-4"
+         (click)="navigateToOption(option)">
+      {{option}}
+    </div>
+    <img src='{{USER_MENU_ICON}}'
+         alt="Menu"
+         class="menu-icon clickable me-5"
+         (click)="changeVisibility()">
+  </div>
+</div>
+<div class="d-flex justify-content-end user-icon-dropdown" *ngIf="dropDownVisible">
+  <user-menu [isDropdownVisible]=dropDownVisible></user-menu>
+</div>

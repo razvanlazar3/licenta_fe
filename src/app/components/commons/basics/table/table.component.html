@@ -1,0 +1,44 @@
+<main class="table d-flex justify-content-center mt-4">
+  <table>
+    <ng-container *ngFor="let header of  getKeys(elements[0])">
+      <ng-container>
+        <th *ngIf="header !== 'depositId'">
+          <div class="d-flex justify-content-center header">
+            {{ header }}
+          </div>
+        </th>
+      </ng-container>
+    </ng-container>
+    <tbody>
+    <tr *ngFor="let element of elements; let i = index"
+        [class.profit]="element['currentSum'] - element['initialSum'] > 0  && isCrypto"
+        [class.loss]="element['currentSum'] - element['initialSum'] < 0  && isCrypto"
+    >
+      <ng-container
+        *ngFor="let key of getKeys(element)"
+      >
+        <ng-container>
+          <td *ngIf="key !== 'depositId'">
+            <div class="d-flex flex-row justify-content-center">
+              <div *ngIf="key !== 'period' && key !=='createdDate' && key !== 'lastUpdated'">
+                {{ element[key] }}
+              </div>
+              <div *ngIf="key === 'createdDate'  || key === 'lastUpdated'" class="longer-fields">
+                {{ element[key].substring(0, 10)}}
+              </div>
+              <div *ngIf="key === 'discount'"> %</div>
+              <div *ngIf="key === 'period'" class="longer-fields">{{translatablePeriod[i]}} </div>
+            </div>
+          </td>
+        </ng-container>
+        <ng-container>
+        </ng-container>
+      </ng-container>
+      <td class="remove-icon clickable">
+        <img src="{{icon}}" (click)="openModal(element)">
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</main>
+

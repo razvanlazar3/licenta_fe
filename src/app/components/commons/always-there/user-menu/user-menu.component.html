@@ -1,0 +1,8 @@
+<div class="container d-flex align-items-center p-2"
+     [ngClass]="{'visible':isDropdownVisible,
+                 'invisible':!isDropdownVisible}">
+  <div class="dropdown-option p-1 clickable"
+       (click)="logout()">
+    {{LOGOUT}}
+  </div>
+</div>

@@ -1,0 +1,50 @@
+.input-container {
+  grid-template-columns: 15% 85%;
+  background-color: #f0f0f0;
+  outline: none;
+  border: none;
+  border-radius: 3rem;
+  width: 100%;
+  height: 90%;
+}
+
+.input-box {
+  width: 19.5rem
+}
+
+.input-container img {
+  max-height: 60%;
+  max-width: 2rem;
+  margin: 0.5rem;
+}
+
+.input-container .editable-input, .input-container input {
+  line-height: 1;
+  font-size: 16pt;
+}
+
+.input-container .editable-input:focus-visible, .input-container input {
+  outline: none;
+  border: none;
+  background-color: transparent;
+}
+
+.input-container input {
+  height: 1.5rem;
+  overflow: hidden;
+  width: 80%;
+}
+
+.input-container input:placeholder-shown {
+  color: rgba(206, 193, 175, 0.9);
+  font-weight: 400;
+  font-style: italic;
+}
+
+.input-container .editable-input {
+  min-height: 10rem;
+  width: 17.5rem;
+  white-space: pre-wrap;
+  word-break: break-word;
+  overflow: auto;
+}

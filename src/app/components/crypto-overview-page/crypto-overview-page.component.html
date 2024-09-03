@@ -1,0 +1,50 @@
+<app-sticky-header></app-sticky-header>
+<div class="d-flex flex-column second-background">
+  <app-general-intro [selectedOption]="generalPageOptionEnum.OVERVIEW"></app-general-intro>
+  <div class="d-flex flex-column align-items-center justify-content-center">
+    <div class="d-flex align-items-center overview-title mt-1 mb-2 justify-content-lg-start">
+      {{netWorth}}
+      <div class="d-flex flex-row gap-2"
+           [ngClass]="{'profit': balance > 0, 'loss': balance < 0}">
+        <div *ngIf="balance > 0" class="profit">Profit</div>
+        <div *ngIf="balance < 0" class="loss">Loss</div>
+        {{balance + "$ " + percentage + "%"}}
+      </div>
+    </div>
+    <div class="d-flex flex-row charts-section">
+      <div class="chart p-3">
+        <div class="d-flex align-items-center chart-title mt-1 mb-2 justify-content-lg-start">
+          {{TOTAL_SUMS_PIE_CHART_TITLE}}
+        </div>
+        <apx-chart
+          [series]="totalSumsChartOptions?.series!"
+          [chart]="totalSumsChartOptions?.chart!"
+          [labels]="totalSumsChartOptions?.labels!"
+          [responsive]="totalSumsChartOptions?.responsive!"
+        ></apx-chart>
+      </div>
+      <div class="chart p-3">
+        <div class="d-flex align-items-center chart-title mt-1 mb-2 justify-content-lg-start">
+          {{PROFITS_PIE_CHART_TITLE}}
+        </div>
+        <apx-chart
+          [series]="profitsChartOptions?.series!"
+          [chart]="profitsChartOptions?.chart!"
+          [labels]="profitsChartOptions?.labels!"
+          [responsive]="profitsChartOptions?.responsive!"
+        ></apx-chart>
+      </div>
+    </div>
+    <form [formGroup]="searchForm">
+      <app-input
+        class="d-flex mb-1"
+        [label]="SEARCH_LABEL"
+        [icon]="SEARCH_ICON"
+        formControlName="{{SEARCH}}">
+      </app-input>
+    </form>
+    <app-table [elements]="filteredPersonalCrypto"
+               [isCrypto]="true"
+               (cryptoRemovedEvent)="updatePersonalCrypto()"></app-table>
+  </div>
+</div>

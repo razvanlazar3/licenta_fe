@@ -1,0 +1,121 @@
+$primary-color: #1B4656;
+$secondary-color: rgba(118, 185, 200, 0.1);
+$ternary-color: #76B9C8;
+$error-color: #E24549;
+$card-background: radial-gradient(circle at 50% 50%, rgba(175, 122, 44, 0), rgba(175, 122, 44, 0.7) 100%),
+linear-gradient(to right, rgb(247, 229, 153, 0.8), rgb(247, 229, 153, 0.8));
+
+@import "bootstrap/scss/bootstrap";
+
+div, h1, h2, h3, h4, h5, h6, input, .card-body {
+  color: $primary-color;
+}
+
+.background {
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: scroll;
+  background-image: url('../src/assets/general/background-images/finance.png');
+}
+
+.second-background {
+  height: 100vh;
+  display: flex;
+  overflow: scroll;
+  background-color: $secondary-color;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.error {
+  color: $error-color;
+}
+
+.card {
+  border: solid 4px $primary-color;
+  border-radius: 1rem;
+  background: $card-background;
+  background-blend-mode: multiply;
+  position: relative;
+  max-width: 50vw;
+  max-height: 90vh;
+}
+
+.card-body {
+  font-family: 'Poppins', sans-serif;
+  max-height: 80%;
+}
+
+.card-title {
+  font-weight: 700;
+  font-size: 18pt;
+  line-height: 1;
+}
+
+.card-image {
+  max-height: 80%;
+  max-width: 20%;
+}
+
+mat-dialog-container {
+  .mdc-dialog__container {
+    .mat-mdc-dialog-surface {
+      border-radius: 1rem;
+    }
+  }
+}
+
+body {
+  margin: 0;
+}
+
+html, body {
+  height: 100vh;
+}
+
+mat-snack-bar-container {
+  .mdc-snackbar__surface {
+    position: absolute;
+    bottom: 32rem;
+  }
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.chart {
+  margin: 35px auto;
+  border: 2px solid $primary-color;
+  box-shadow: 0px 1px 22px -12px #607D8B;
+  background-color: #fff;
+  padding: 25px 35px 25px 30px;
+}
+
+.chart-title {
+  font-size: 16pt;
+  font-weight: 900;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.charts-section {
+  gap: 3rem;
+}
+
+.cdk-overlay-container {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+

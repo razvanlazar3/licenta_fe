@@ -1,0 +1,14 @@
+<div class="d-flex flex-column input-box">
+  <div class="d-flex align-items-center m-1 input-container">
+    <img *ngIf="icon !==''" src="{{ icon }}" alt="missing-icon">
+    <input *ngIf="!isTextArea" [type]="hide ? 'password' : type" class="input p-2 m-2" placeholder="{{ label }}"
+           [formControl]="valueControl" [readOnly]="readonly">
+    <div *ngIf="isTextArea" contenteditable="true" class="editable-input p-3"
+         [innerHTML]="textAreaValue"
+         (input)="modifyTextAreaValue($event)"
+    >{{label}}</div>
+  </div>
+  <div *ngIf="errors">
+    <h6 class="d-flex justify-content-center m-2 error" *ngFor="let error of errors">{{ error }}</h6>
+  </div>
+</div>
